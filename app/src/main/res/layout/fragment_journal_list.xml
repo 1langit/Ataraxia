@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.journal.JournalListFragment"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:paddingHorizontal="20sp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_badge"
+        android:backgroundTint="@color/white_black_50"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
+        android:hint="Cari journal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_journal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        tools:listitem="@layout/component_journal" />
+
+</LinearLayout>

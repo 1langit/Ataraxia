@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.article.ArticleActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_left"
+        app:title="Artikel Blog"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/font_heading6_semibold" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="20sp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_badge"
+        android:backgroundTint="@color/white_black_50"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
+        android:hint="Ketik kata kunci..."
+        app:layout_constraintEnd_toStartOf="@+id/btn_filter"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topAppBar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_filter"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="12dp"
+        app:icon="@drawable/ic_filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_app_bar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_article"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        tools:listitem="@layout/component_article"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

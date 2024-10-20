@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.community.CommunityPostActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_left"
+        app:title="Unggahan"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/font_heading6_semibold" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topAppBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_profile"
+                style="@style/ShapeAppearance.Material3.Corner.Full"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/margin_default"
+                android:background="@color/ungu_tua_50"
+                android:src="@drawable/ic_user"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:contentPadding="4dp"
+                app:shapeAppearance="@style/CircularShapeAppearance"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_name"
+                style="@style/font_paragraph_semibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Anonim"
+                app:layout_constraintStart_toEndOf="@+id/img_profile"
+                app:layout_constraintTop_toTopOf="@+id/img_profile" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_timestamp"
+                style="@style/font_small_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:translationY="-4dp"
+                android:text="2 Jam"
+                app:layout_constraintStart_toEndOf="@+id/img_profile"
+                app:layout_constraintTop_toBottomOf="@+id/txt_name" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_option"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_default"
+                android:layout_marginTop="12dp"
+                app:icon="@drawable/ic_option"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_sample"
+                app:layout_constraintTop_toBottomOf="@+id/txt_timestamp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_title"
+                style="@style/font_heading6_semibold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:text="Bagaimana cara keluar dari circle yang toxic?"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_post" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                android:layout_marginTop="4dp"
+                android:justificationMode="inter_word"
+                android:text="@string/lorem"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_content" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                android:backgroundTint="@color/white_black_50"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_like" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_like"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:minHeight="0dp"
+                android:padding="6dp"
+                android:drawableLeft="@drawable/ic_like"
+                android:textColor="@color/white_black_900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chip_category" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1,210 suka"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_like"
+                app:layout_constraintStart_toEndOf="@+id/btn_like"
+                app:layout_constraintTop_toTopOf="@+id/btn_like" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_comment"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:drawableLeft="@drawable/ic_comment"
+                android:minHeight="0dp"
+                android:text="120 komentar"
+                android:textColor="@color/white_black_900"
+                app:layout_constraintStart_toEndOf="@+id/txt_like"
+                app:layout_constraintTop_toTopOf="@+id/btn_like" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
